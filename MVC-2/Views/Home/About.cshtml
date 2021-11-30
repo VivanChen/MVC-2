@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MVC_2.Models.Employee>
+
+@{
+    Layout = null;//不使用版面配置
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        div {
+            margin: 10px; /*間距*/
+            padding: 10px; /*內距*/
+            background-color: azure; /*背景顏色*/
+            width: 180px; /*寬*/
+            height: 130px; /*高*/
+            border-style: solid; /*單線固定*/
+            border-width: 2px; /*框線大小*/
+            border-color: aqua; /*框線顏色*/
+            float: left; /*浮動*/
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h4>我是TempData:@TempData["Yest2"]</h4>
+    </div>
+    <div>
+        <button onclick="usec">按我</button>
+    </div>
+</body>
+
+<script language="javascript">
+    
+    function usec() {
+
+        alert('你讀取:@TempData["Yest2"]');
+    };
+</script>
+</html>

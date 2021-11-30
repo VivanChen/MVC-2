@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MVC_2.Models.Employee>
+
+@{
+    Layout = null;//不使用版面配置
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        div{
+            margin:10px;/*間距*/
+            padding:10px;/*內距*/
+            background-color:azure;/*背景顏色*/
+            width:180px;/*寬*/
+            height:130px;/*高*/
+            border-style:solid;/*單線固定*/
+            border-width:2px;/*框線大小*/
+            border-color:aqua;/*框線顏色*/
+            float:left;/*浮動*/
+        }
+    </style>
+</head>
+<body>
+    @foreach (var item in Model)
+    {
+    <div>
+        <p>編號 : @item.Id</p>
+        <p>姓名 : @item.Name</p>
+        <p>薪資 : @item.Salary</p>
+    </div>
+    }
+<div>
+    連線字串:@foreach (var item in ViewBag.connectionString)
+    {
+        <button onclick="useb()">按我</button>
+        
+
+    }
+</div>
+    <div>
+        <h3>@ViewData["Test"]</h3> 
+        <h4>我是TempData:@TempData["Yest2"]</h4>
+        
+    </div>
+    <div>
+        <button onclick="usec">按我</button>
+    </div>
+</body>
+
+<script language="javascript">
+    function useb() {
+        alert("你讀取:@ViewBag.connectionString[1]");
+    };
+    function usec() {
+
+        alert("你讀取:@ViewData["Test"]");
+    };
+</script>
+</html >
